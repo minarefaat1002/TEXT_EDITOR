@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- css files-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet " href="style.css ">
+</head>
+
+<body>
+    <div class="container">
+        <div class="options">
+            <!--text format -->
+            <button id="bold" class="option-button format">
+                <i class="fa-solid fa-bold"></i>
+            </button>
+            <button id="italic" class="option-button format">
+                <i class="fa-solid fa-italic"></i>
+            </button>
+            <button id="underline" class="option-button format">
+                <i class="fa-solid fa-underline"></i>
+            </button>
+            <button id="strikethrough" class="option-button script">
+                <i class="fa-solid fa-strikethrough"></i>
+            </button>
+            <button id="superscript" class="option-button script">
+                <i class="fa-solid fa-superscript"></i>
+            </button>
+            <button id="subscript" class="option-button script">
+                <i class="fa-solid fa-subscript"></i>
+            </button>
+            <!--list-->
+            <button id="insertOrderdList" class="option-button">
+                <div class="fa-solid fa-list-ol"></div>
+            </button>
+            <button id="insertUnorderedList" class="option-button">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <!--undo/redo-->
+            <button id="undo" class="option-button">
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button id="redo" class="option-button">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+            <!--link-->
+            <button id="createLink" class="adv-option-button">
+                <i class="fa fa-link"></i>
+            </button> <button id="unlink" class="option-button">
+                <i class="fa fa-unlink"></i>
+                <!--Alignment-->
+            </button> <button id="jutifyLeft" class="option-button align">
+                <i class="fa-solid fa-align-left"></i>
+            </button> <button id="justifyCenter" class="option-button align">
+                <i class="fa-solid fa-align-center"></i>
+            </button>
+            <button id="justifyRight" class="option-button align">
+                <i class="fa-solid fa-align-right"></i>
+            </button>
+            <button id="justifyFull" class="option-button align">
+                <i class="fa-solid fa-align-justify"></i>
+            </button>
+            <button id="indent" class="option-button spacing">
+                <i class="fa-solid fa-indent"></i>
+            </button>
+            <button id="outdent" class="option-button spacing">
+                <i class="fa-solid fa-outdent"></i>
+            </button>
+            <button type="button" id="insertImage" class="option-button">
+                <i class="fa fa-image"></i>
+            </button>
+            <!--font-->
+            <select name="" id="fontName" class="adv-option-button"></select>
+            <select name=" " id="fontSize" class="adv-option-button"></select>
+            <input type="text" placeholder="FileName" value="untitled" id="fileName">
+            <select onchange="fileHandle(this.value); this.selectedIndex = 0;">
+                <option value="" selected="" hidden="" disabled>File</option>
+                <option value="new"> New File</option>
+                <option value="txt">save as txt</option>
+                <option value="pdf"> save as pdf</option>
+            </select>
+            <!--color-->
+            <div class="input-wrapper">
+                <input type="color" name=" " id="foreColor" class="adv-option-button">
+                <label for="foreColor">Font Color</label>
+                <input type="color" name=" " id="backColor" class="adv-option-button">
+                <label for="backColor">Highlight Color</label>
+            </div>
+        </div>
+        <div class="voice-to-text">
+            <div class="left">
+                <div>Languages</div>
+                <div><select name="language" id="language"></select></div>
+            </div>
+            <div class="right">
+                <button class="btn record" id="clickToConvert">
+                    <div class="icon">
+                        <ion-icon name="mic-outline"></ion-icon>
+                        <img src="bars.svg" alt="" />
+                    </div>
+                    <p>Start Listening</p>
+                </button>
+                <button class="btn clear">
+                    <ion-icon name="trash-outline"></ion-icon>
+                    <p>Clear</p>
+                </button>
+            </div>
+        </div>
+        <div class="wrapper">
+            <input type="text" id="textToSearch" class="" placeholder="Enter word to search">
+            <button class="" onclick="wordSearch()">Search</button>
+        </div>
+        <div class="work-area">
+            <ul id="list"></ul>
+            <div id="textInput" contenteditable="true">
+            </div>
+
+        </div>
+    </div>
+    <!-- IONICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- LANGUAGES -->
+    <script src="languages.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--MAIN JS FILE-->
+    <script src="main.js "></script>
+    <!--AUTO COMPLETE-->
+    <script src="words.js"></script>
+</body>
+
+</html>

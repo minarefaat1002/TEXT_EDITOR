@@ -1,0 +1,214 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+body .container {
+    background-color: #fff;
+    width: 80%;
+    margin: 80px auto;
+    padding: 30px 10px;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.options button {
+    height: 28px;
+    width: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+select {
+    padding: 7px;
+    border: 1px solid #020929;
+    border-radius: 3px;
+}
+
+.options label,
+.options select {
+    font-family: "Poppins", sans-serif;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #020929;
+}
+
+input[type="color"]::-moz-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #020929;
+}
+
+#textInput {
+    border: 1px solid #ddd;
+    padding: 20px;
+    height: 50vh;
+    overflow: auto;
+}
+
+.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.left {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.right {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.voice-to-text {
+    display: flex;
+    margin-top: 20px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    line-height: 100%;
+    gap: 10px;
+    margin-right: 10px;
+    height: 60px;
+    padding: 20px;
+    width: 50%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    background-color: #19171e;
+}
+
+.btn.focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn ion-icon {
+    font-size: 30px;
+}
+
+.btn.record img {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+.record.recording img {
+    display: block;
+}
+
+.icon {
+    bottom: 4px;
+    position: relative;
+}
+
+.record.recording ion-icon {
+    display: none;
+}
+
+.wrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.wrapper button {
+    height: 40px;
+    background-color: #19171e;
+}
+
+.wrapper input {
+    margin-left: 10px;
+    width: 50%;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid#201d2e;
+    margin-right: 20px;
+}
+
+.wrapper button {
+    border-radius: 8px;
+    width: 30%;
+    background-color: #201d2e;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.work-area {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.work-area #textInput {
+    width: 75%;
+}
+
+ul {
+    display: inline-block;
+    width: 20%;
+}
+
+mark {
+    background-color: rgb(243, 255, 111);
+}
